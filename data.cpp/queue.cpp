@@ -15,6 +15,7 @@ int main()
     {
         cout << practice1.front() << endl;
         practice1.pop();
+        //if the queue is constructed of a vector, pop() will not work
     }
  
     // ONLY C++ 11   
