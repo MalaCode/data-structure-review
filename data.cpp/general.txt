@@ -1,0 +1,4 @@
+an array would have to know the list to construct: 
+Push - Reference, adding a value to a structure that has enough room
+Emplace - constructing, constructing a structure with more room to fit the value 
+push - conceptually - means to add onto the end 
