@@ -5,13 +5,13 @@ using namespace std;
 int main()
 {
     int arr [7] = {3, 44, 38, 5, 47, 15, 36};
-    int compPivotIndex = 0;
+    int pivot = 0;
     int index;
     for (int i = 0; i < 7; i++)
     {
-        index = i;
-        // compPivotIndex = i + 1;
-        for (int x = i + 1; x < 7; x++)
+        pivot = arr[i];
+        index = i + 1;
+        for (int x = index; x < 7; x++)
         {
             if (arr[x] < arr[i])
             {
