@@ -2,37 +2,50 @@
 
 using namespace std;
 
-void swap (int &left, int &right)
+void swap (int arr [], int left, int right)
 {
-    int holder = left;
-    left = right;
-    right = holder;
+    int holder = arr[left];
+    arr[left] = arr[right];
+    arr[right] = holder;
+}
+
+void quickSort (int arr[], int right, int left)
+{
+    int pivot = arr[(right-left)/2];
+    int l = left;
+    int r = right;
+    while (l <= r)
+    {
+        while (arr[l] < pivot)
+        {
+            l++;
+        }
+        while (arr[r] > pivot )
+        {
+            r--;
+        }
+        if (l <= r)
+        {
+            swap (arr[l], arr[r]);
+            l++;
+            r++;
+        }
+    }
+    if (left < r)
+    {
+        quickSort(arr, r, left);
+    }
+    if (right > l)
+    {
+        quickSort(arr, right, l);
+    }
 }
 
 int main()
 {
     int arr [7] = {3, 44, 38, 5, 47, 15, 36};
-    int pivot = 0;
-    int index = 0;
-    for (int i = 0; i < 7; i++)
-    {
-        pivot = arr[i];
-        index = i + 1;
-        for (int x = i + 1; x < 7; x++)
-        {
-            if (arr[x] < arr[i])
-            {
-                swap(arr[x], arr[index]);
-                index++;
-            }
-            
-        }
-        index--;
-        swap(arr[i], arr[index]);
-    }
-
-
-
+    quickSort(arr, 6, 0);
+        
     for (int j = 0; j < 7; j++)
     {
         cout << arr[j] << endl;

@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
     int min = 0;
-    bool flag = false;
     int arr [7] = {3, 44, 38, 5, 47, 15, 36};
     for (int i = 0; i < 6; i++)
     {
