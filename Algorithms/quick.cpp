@@ -11,7 +11,7 @@ void swap (int arr [], int left, int right)
 
 void quickSort (int arr[], int right, int left)
 {
-    int pivot = arr[(right-left)/2];
+    int pivot = arr[(right+left)/2];
     int l = left;
     int r = right;
     while (l <= r)
@@ -26,16 +26,16 @@ void quickSort (int arr[], int right, int left)
         }
         if (l <= r)
         {
-            swap (arr[l], arr[r]);
+            swap (arr, l, r);
             l++;
-            r++;
+            r--;
         }
     }
     if (left < r)
     {
         quickSort(arr, r, left);
     }
-    if (right > l)
+    if (l < right)
     {
         quickSort(arr, right, l);
     }

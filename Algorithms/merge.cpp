@@ -30,6 +30,7 @@ void merge (vector<int> &vec, int begin, int mid, int end)
         else
         {
             vec.at(z) = temp2.at(x);
+            x++;
         }
         z++;
     }
@@ -39,7 +40,7 @@ void mergesort(vector<int> &vec, int begin, int end)
 {
     if (begin < end)
     {
-        int mid = (end+1)/2;
+        int mid = (end+begin)/2;
         mergesort(vec, begin, mid);
         mergesort(vec, mid + 1, end);
         merge (vec, begin, mid, end);
@@ -57,7 +58,7 @@ int main()
     vec.push_back(47);    
     vec.push_back(15);
     vec.push_back(36);
-    mergesort(vec,0,7);
+    mergesort(vec,0,6);
 
 
     for (int j = 0; j < 7; j++)
